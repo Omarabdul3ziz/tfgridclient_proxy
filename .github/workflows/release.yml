@@ -28,8 +28,7 @@ jobs:
         with:
           images: ghcr.io/omarabdul3ziz/gridproxy
           tags: |
-            type=semantic
-            pattern={{type}}v{{major}}.{{minor}}.{{patch}}-{{preRelease}}
+            type=semver,pattern={{type}}v{{major}}.{{minor}}.{{patch}}-{{preRelease}}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3

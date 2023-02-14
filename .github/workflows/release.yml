@@ -27,7 +27,9 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ghcr.io/omarabdul3ziz/gridproxy
-          tags: type=semver,pattern=v{{major}}.{{minor}}.{{patch}}-{{preRelease}}
+          tags: |
+            type=semver
+            pattern={{type}}v{{major}}.{{minor}}.{{patch}}-{{preRelease}}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
